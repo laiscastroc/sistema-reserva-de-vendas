@@ -1,6 +1,5 @@
 ![header do sistema](header.png)
 
-
 ---
 # Bird Sales System
 
@@ -12,12 +11,13 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES2024-F7DF1E?logo=javascript)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Neon-4169E1?logo=postgresql)
 ![REST API](https://img.shields.io/badge/API-REST-orange)
-![Railway](https://shields.io)
+![Railway](https://img.shields.io/badge/Deploy-Railway-0B0D0E?logo=railway&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 Sistema simples para gerenciamento de vendas de aves desenvolvido com arquitetura moderna e organização baseada em Clean Architecture.
 
-[Demo](https://sistema-reserva-de-vendas-frontend-production.up.railway.app/) • [Issues](https://github.com/laiscastroc/sistema-reserva-de-vendas/issues)
+# Teste
+[Sistema](https://sistema-reserva-de-vendas-frontend-production.up.railway.app/)
 
 </div>
 
@@ -184,6 +184,8 @@ bird-sales-system
 
 ## Deploy
 
+Deploy automatizado utilizando:
+
 * Railway
 
 ## Qualidade
@@ -302,13 +304,6 @@ NODE_ENV=development
 
 ---
 
-# Deploy
-
-Deploy automatizado utilizando:
-
-* Railway
-* Neon PostgreSQL
-
 Fluxo:
 
 ```text id="f08jig"
@@ -340,12 +335,6 @@ Produção
 
 ---
 
-# Licença
-
-Distribuído sob licença MIT.
-
----
-
 # Desenvolvedor
 
 Laís Castro
@@ -363,6 +352,20 @@ Email:
 laisccastroc2023@gmail.com
 
 ---
+
+# Licença
+
+Distribuído sob licença MIT.
+
+---
+
+# Donations
+Se quiser contribuir com algo em valor, meu PIX:
+
+```
+minemiledois@gmail.com
+```
+
 <br>
 <br>
 <p align= "center">
