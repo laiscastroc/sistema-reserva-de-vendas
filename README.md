@@ -16,11 +16,11 @@
 
 Sistema simples para gerenciamento de vendas de aves desenvolvido com arquitetura moderna e organização baseada em Clean Architecture.
 
-# Teste
-[Sistema](https://sistema-reserva-de-vendas-frontend-production.up.railway.app/)
-
 </div>
 
+---
+# Teste
+[Sistema](https://sistema-reserva-de-vendas-frontend-production.up.railway.app/)
 ---
 
 # Sobre o projeto
@@ -337,7 +337,7 @@ Produção
 
 # Desenvolvedor
 
-Laís Castro
+Laís Castro, para saber mais, acesse:
 
 GitHub:
 
