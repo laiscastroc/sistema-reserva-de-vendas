@@ -12,12 +12,12 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES2024-F7DF1E?logo=javascript)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Neon-4169E1?logo=postgresql)
 ![REST API](https://img.shields.io/badge/API-REST-orange)
-![Vercel](https://img.shields.io/badge/Deploy-Vercel-black?logo=vercel)
+![Railway](https://shields.io)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 Sistema simples para gerenciamento de vendas de aves desenvolvido com arquitetura moderna e organização baseada em Clean Architecture.
 
-[Demo](https://seu-projeto.vercel.app) • [API](https://api-seuprojeto.vercel.app) • [Issues](https://github.com/seu-usuario/bird-sales-system/issues)
+[Demo](https://sistema-reserva-de-vendas-frontend-production.up.railway.app/) • [Issues](https://github.com/laiscastroc/sistema-reserva-de-vendas/issues)
 
 </div>
 
@@ -37,6 +37,17 @@ O Bird Sales System foi criado para centralizar o gerenciamento de aves, estoque
 
 ---
 
+# Imagens do Projeto
+### Home
+![home do sistema](home.png)
+---
+### Histórico
+![histórico do sistema](history.png)
+---
+### Formulário de Registro
+![formulário do sistema](form.png)
+
+---
 # Features
 
 ### Gestão de aves
@@ -173,7 +184,7 @@ bird-sales-system
 
 ## Deploy
 
-* Vercel
+* Railway
 
 ## Qualidade
 
@@ -295,7 +306,7 @@ NODE_ENV=development
 
 Deploy automatizado utilizando:
 
-* Vercel
+* Railway
 * Neon PostgreSQL
 
 Fluxo:
@@ -304,7 +315,7 @@ Fluxo:
 Push GitHub
      ↓
 
-Vercel Build
+Railway Build
      ↓
 
 Deploy automático
@@ -350,4 +361,11 @@ https://www.linkedin.com/in/la%C3%ADs-castro/
 Email:
 
 laisccastroc2023@gmail.com
+
+---
+<br>
+<br>
+<p align= "center">
+  <a href="https://emoji.gg/emoji/5349-hellokittybyebye"><img src="https://cdn3.emoji.gg/emojis/5349-hellokittybyebye.png" width="128px" height="128px" alt="HelloKittyByeBye"></a>
+</p>
 
