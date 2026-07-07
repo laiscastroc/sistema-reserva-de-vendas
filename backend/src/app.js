@@ -40,6 +40,18 @@ app.use(morgan(isProduction ? "combined" : "dev"));
 
 app.use(generalLimiter);
 
+app.get("/", (req, res) => {
+  res.json({
+    message: "Bem-vindo ao Sistema de Reserva de Vendas",
+    version: "1.0.0",
+    endpoints: {
+      health: "/api/health",
+      birds: "/api/birds",
+      sales: "/api/sales",
+    },
+  });
+});
+
 app.use("/api", routes);
 
 app.use(notFoundHandler);
