@@ -1,3 +1,5 @@
+import { query } from "../config/database.js";
+
 export const dashboardRepository = {
     async getSummary() {
        const result = await query(
@@ -19,7 +21,7 @@ export const dashboardRepository = {
         const result = await query(
             `SELECT
          d::date AS day,
-         COALESCE(SUM(s.total_price), 0) AS revenue,
+         COALESCE(SUM(s.total_price), 0) AS revenue,gi
          COUNT(s.id)::int AS sales_count
        FROM generate_series(CURRENT_DATE - ($1::int - 1), CURRENT_DATE, INTERVAL '1 day') AS d
        LEFT JOIN sales s
