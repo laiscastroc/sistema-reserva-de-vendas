@@ -1,6 +1,7 @@
 import { Router } from "express";
 import birdsRoutes from "./birds.routes.js";
 import salesRoutes from "./sales.routes.js";
+import dashboardRoutes from "./dashboard.routes.js";
 
 const router = Router();
 
@@ -10,5 +11,6 @@ router.get("/health", (req, res) => {
 
 router.use("/birds", birdsRoutes);
 router.use("/sales", salesRoutes);
+router.use("/dashboard", dashboardRoutes);
 
 export default router;

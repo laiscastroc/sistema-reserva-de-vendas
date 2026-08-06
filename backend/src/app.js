@@ -17,7 +17,7 @@ export const app = express();
 app.set("trust proxy", 1);
 
 //cabeçalhos de segurança (proteger contra alguns 
-//ataques comuns: sniffing de MIME type, clickjacking, etc)
+//ataques comuns: sniffing de MIME type, clickjacking, etc
 app.use(helmet());
 //CORS restrito às origens configuradas em FRONTEND_URL — evita que
 //qualquer site chame a API a partir do navegador de um usuário.

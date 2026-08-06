@@ -1,6 +1,10 @@
 import { Pool } from "pg";
 import { env } from "./env.js";
 
+//usa-se um pool (várias conexões) para que possíveis
+//requisições simultâneas utilizem conexões já abertas
+//invés de abrir uma nova conexão a cada requisição.
+
 export const pool = new Pool({
   connectionString: env.databaseUrl,
   ssl: { rejectUnauthorized: false },

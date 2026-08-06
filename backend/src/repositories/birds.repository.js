@@ -37,7 +37,8 @@ export const birdsRepository = {
     );
     return result.rows.map((row) => row.type);
   },
-
+//decrementa o estoque da ave a partir do momento
+//que a venda está em "transação"
   async decrementStock(client, birdId, quantity) {
     const { rows } = await client.query(
       `SELECT id, stock FROM birds WHERE id = $1 FOR UPDATE`,

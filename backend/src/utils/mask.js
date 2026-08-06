@@ -31,8 +31,8 @@ export function maskContact(contact) {
   return maskDigits(contact);
 }
 
-/*aplica o mascaramento em um registro de venda vindo do banco, 
-retornando um novo objeto seguro para ser exposto pela API pública.*/
+//aplica o mascaramento em um registro de venda vindo do banco, 
+//retornando um novo objeto seguro para ser exposto pela API pública.
 export function maskSaleRecord(sale) {
   return {
     ...sale,

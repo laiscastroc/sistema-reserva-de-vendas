@@ -4,6 +4,11 @@ import { salesRepository } from "../repositories/sales.repository.js";
 import { ApiError } from "../utils/ApiError.js";
 import { maskSaleRecord } from "../utils/mask.js";
 
+//cria uma venda/reserva e depois "trava" para conferir o
+//estoque da ave, se ok, grava e vende com o valor atual
+//se não - ou qlq etapa falhar -, a transação é desfeita 
+//com rollback e o estoque não é alterado
+
 export const salesService = {
   async create(payload) {
     return withTransaction(async (client) => {
@@ -47,6 +52,8 @@ export const salesService = {
       return sale;
     });
   },
+
+  //mascaramento dos dados sensíveis do comprador 
   async list({ page, limit, status, birdId }) {
     const { rows, total } = await salesRepository.findAndCount({ page, limit, status, birdId });
     return {
@@ -60,6 +67,8 @@ export const salesService = {
     };
   },
 
+  //ao cancelar reserva, o estoque da ave é incrementado novamente
+  //não permite que vendas já finalizadas sejam canceladas
   async cancelReservation(id) {
     return withTransaction(async (client) => {
       const { rows } = await client.query(`SELECT * FROM sales WHERE id = $1 FOR UPDATE`, [id]);

@@ -4,6 +4,10 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import pg from "pg";
 
+//runner de migrações simples de cada arquivo .sql
+//da asta migrations. cada um é idempotente:
+//pode ser rodado várias vezes sem quebrar nada.
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const migrationsDir = path.join(__dirname, "migrations");
 

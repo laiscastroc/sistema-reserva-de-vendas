@@ -17,6 +17,11 @@ const router = createRouter({
       component: () => import('@/views/HistoryView.vue'),
     },
     {
+      path: '/dashboard',
+      name: 'dashboard',
+      component: () => import('@/views/DashboardView.vue'),
+    },
+    {
       path: '/register/:id',
       name: 'register',
       component: () => import('@/views/RegisterView.vue'),

@@ -8,7 +8,7 @@ export function notFoundHandler(req, res) {
   });
 }
 
-/*detalhes internos não são vazados (stack trace, mensagem de driver do banco)*/
+//detalhes internos não são vazados
 export function errorHandler(err, req, res, next) {
   if(err instanceof ApiError) {
     return res.status(err.statusCode).json({

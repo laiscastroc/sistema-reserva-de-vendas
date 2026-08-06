@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faCartShopping, faClockRotateLeft } from '@fortawesome/free-solid-svg-icons'
+import { faCartShopping, faChartLine, faClockRotateLeft } from '@fortawesome/free-solid-svg-icons'
 </script>
 
 <template>
@@ -22,6 +22,10 @@ import { faCartShopping, faClockRotateLeft } from '@fortawesome/free-solid-svg-i
         <router-link to="/history" class="nav-link">
           <FontAwesomeIcon :icon="faClockRotateLeft" />
           Histórico
+        </router-link>
+        <router-link to="/dashboard" class="nav-link">
+          <FontAwesomeIcon :icon="faChartLine" />
+          Dashboard
         </router-link>
       </nav>
     </div>
