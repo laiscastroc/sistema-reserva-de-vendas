@@ -76,7 +76,7 @@ async function submit(status: 'VENDA' | 'RESERVA') {
   }
 
   submitting.value = true
-  try {
+  try{
     await salesService.create({
       bird_id: props.bird.id,
       gender: form.gender,
@@ -93,13 +93,13 @@ async function submit(status: 'VENDA' | 'RESERVA') {
       status === 'VENDA' ? 'Venda registrada com sucesso!' : 'Reserva registrada com sucesso!'
     )
     router.push('/history')
-  } catch (error) {
-    if (error instanceof ApiRequestError) {
+  }catch(error){
+    if(error instanceof ApiRequestError){
       toast.error(error.message)
-    } else {
+    }else{
       toast.error('Não foi possível concluir o registro. Tente novamente.')
     }
-  } finally {
+  }finally{
     submitting.value = false
   }
 }
