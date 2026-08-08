@@ -10,7 +10,7 @@ export const dashboardRepository = {
         COALESCE(SUM(total_price) FILTER (WHERE status = 'VENDA'), 0) AS total_revenue,
         COALESCE(SUM(legalization_total) FILTER (WHERE status = 'VENDA'), 0) AS total_legalization_revenue,
         COALESCE(AVG(total_price) FILTER (WHERE status = 'VENDA'), 0) AS average_ticket,
-         COALESCE(SUM(legalization_total) FILTER (WHERE status = 'VENDA'), 0)::int AS birds_sold
+        COALESCE(SUM(quantity) FILTER (WHERE status = 'VENDA'), 0)::int AS birds_sold
         FROM sales`
        )
        return result.rows[0]
@@ -21,7 +21,7 @@ export const dashboardRepository = {
         const result = await query(
             `SELECT
          d::date AS day,
-         COALESCE(SUM(s.total_price), 0) AS revenue,gi
+         COALESCE(SUM(s.total_price), 0) AS revenue,
          COUNT(s.id)::int AS sales_count
        FROM generate_series(CURRENT_DATE - ($1::int - 1), CURRENT_DATE, INTERVAL '1 day') AS d
        LEFT JOIN sales s
@@ -32,6 +32,22 @@ export const dashboardRepository = {
     );
         return result.rows;
     },
+
+    async getTopBirds(limit) {
+    const result = await query(
+      `SELECT
+         bird_name,
+         SUM(quantity)::int AS total_quantity,
+         SUM(total_price) AS total_revenue
+       FROM sales
+       WHERE status = 'VENDA'
+       GROUP BY bird_name
+       ORDER BY total_revenue DESC
+       LIMIT $1`,
+      [limit]
+    );
+    return result.rows;
+  },
 
     async getRevenueByPaymentMethod() {
     const result = await query(
@@ -67,4 +83,3 @@ export const dashboardRepository = {
     return result.rows;
   },
 };
-
