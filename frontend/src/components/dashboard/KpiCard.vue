@@ -66,12 +66,14 @@ defineProps<{
   font-size: 0.78rem;
   color: var(--color-muted);
   font-weight: 600;
+  line-height: 1.3;
   margin: 0;
 }
 
 .value {
   font-family: var(--font-display);
   font-size: 1.5rem;
+  line-height: 1.15;
   color: var(--color-ink);
   margin: 2px 0 0;
 }

@@ -56,5 +56,7 @@ const chartOptions: ChartOptions<'line'> = {
 <style scoped>
 .chart-box {
   height: 280px;
+  position: relative;
+  overflow: hidden;
 }
 </style>

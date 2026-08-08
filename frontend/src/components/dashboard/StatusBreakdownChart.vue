@@ -42,6 +42,8 @@ const chartOptions: ChartOptions<'doughnut'> = {
 
 <style scoped>
 .chart-box {
-  height: 260px;
+  height: 360px;
+  position: relative;
+  overflow: hidden;
 }
 </style>

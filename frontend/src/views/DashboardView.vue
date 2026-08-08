@@ -224,6 +224,7 @@ onMounted(load)
   border-radius: var(--radius-lg);
   padding: var(--space-5);
   box-shadow: var(--shadow-sm);
+  overflow: hidden;
 }
 
 .panel h3 {

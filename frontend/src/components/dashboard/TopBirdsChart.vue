@@ -52,5 +52,7 @@ const chartOptions: ChartOptions<'bar'> = {
 <style scoped>
 .chart-box {
   height: 280px;
+  position: relative;
+  overflow: hidden;
 }
 </style>
