@@ -1,5 +1,3 @@
-/*a validação do CPF só existe aqui só para dar feedback imediato ao 
-usuário (sem esperar a resposta da API); a validação que importa vem do servidor*/
 export function isValidCPF(rawCpf: string): boolean {
   const cpf = rawCpf.replace(/\D/g, '')
 

@@ -152,7 +152,7 @@ onMounted(load)
               <strong :class="{ zero: bird.stock === 0 }">{{ bird.stock }} un.</strong>
             </li>
           </ul>
-          <EmptyState v-else title="Estoque saudável" description="Nenhuma ave abaixo do limite." />
+          <EmptyState v-else title="Estoque ok" description="Nenhuma ave abaixo do limite." />
         </div>
       </section>
     </template>

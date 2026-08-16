@@ -1,8 +1,3 @@
-/*uma única URL base configurável por ambiente (.env); tratamento de 
-erro consistente (o backend sempre responde `{ error, details? }`, e 
-aqui isso vira uma exceção tipada); timeout automático, evitando 
-requisições penduradas para sempre.*/
-
 const API_URL = import.meta.env.VITE_API_URL ?? 'http://localhost:3000/api'
 const DEFAULT_TIMEOUT_MS = 10_000
 

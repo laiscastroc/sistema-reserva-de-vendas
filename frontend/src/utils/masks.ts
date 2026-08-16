@@ -1,6 +1,3 @@
-/*máscara de EXIBIÇÃO/UX; a validação de verdade (incluindo o
-cálculo dos dígitos verificadores do CPF) é sempre refeita no backend.*/
-
 export function maskCpfInput(value: string): string {
   return value
     .replace(/\D/g, '')

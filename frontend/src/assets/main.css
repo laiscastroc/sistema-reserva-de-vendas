@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 :root {
-  --color-primary: #0f5257;
-  --color-primary-dark: #0a3a3e;
+  --color-primary: #006400;
+  --color-primary-dark: #006400;
   --color-primary-light: #16717a;
   --color-accent: #f2a65a;
   --color-accent-dark: #d98a3d;

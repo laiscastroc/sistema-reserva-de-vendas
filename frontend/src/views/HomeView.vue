@@ -111,7 +111,7 @@ onMounted(execute)
 
 .filters input:focus,
 .filters select:focus {
-  border-color: var(--color-primary-light);
+  border-color: #006400;
   outline: none;
 }
 

@@ -44,7 +44,6 @@ defineProps<{
   justify-content: center;
   font-size: 1.1rem;
 }
-
 .kpi-card.primary .icon-box {
   background: rgba(15, 82, 87, 0.1);
   color: var(--color-primary);
@@ -72,8 +71,7 @@ defineProps<{
 
 .value {
   font-family: var(--font-display);
-  font-size: 1.5rem;
-  line-height: 1.15;
+  font-size: 1.3rem;
   color: var(--color-ink);
   margin: 2px 0 0;
 }

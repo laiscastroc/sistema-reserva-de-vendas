@@ -6,7 +6,7 @@ import { formatCurrency } from '@/utils/formatters'
 import type { RevenueByPaymentMethod } from '@/types/Dashboard'
 
 const props = defineProps<{ data: RevenueByPaymentMethod[] }>()
-const palette = ['#0f5257', '#f2a65a', '#7fb685', '#16717a', '#d65a5a']
+const palette = ['#006400', '#f2a65a', '#7fb685', '#16717a', '#d65a5a']
 
 const chartData = computed<ChartData<'doughnut'>>(() => ({
   labels: props.data.map((item) => item.paymentMethod),

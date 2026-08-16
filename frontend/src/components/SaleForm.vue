@@ -252,6 +252,31 @@ async function submit(status: 'VENDA' | 'RESERVA') {
   color: #006400;
 }
 
+.field input,
+.field select,
+.field textarea {
+  border: 1px solid rgba(0,100,0,0.35);
+  border-radius: 6px;
+  padding: 8px 10px;
+  background: rgba(0,100,0,0.03);
+  transition: box-shadow 120ms ease, border-color 120ms ease;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: rgba(0,100,0,0.6);
+  box-shadow: 0 0 0 4px rgba(0,100,0,0.06);
+}
+
+.field input.has-error,
+.field select.has-error,
+.field textarea.has-error {
+  border-color: rgba(185,28,28,0.9);
+  box-shadow: 0 0 0 4px rgba(185,28,28,0.06);
+}
+
 .btn-primary {
   background-color: #006400;
 }

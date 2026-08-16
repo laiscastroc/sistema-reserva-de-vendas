@@ -11,13 +11,9 @@ import {
   Filler,
 } from 'chart.js'
 
-/**
- * O Chart.js é modular: cada tipo de gráfico/elemento precisa ser
- * registrado explicitamente. Fazemos isso uma única vez aqui (importado
- * no main.ts) em vez de em cada componente, e só registramos o que
- * realmente usamos — o bundle final fica menor do que importando
- * `chart.js/auto`.
- */
+//explicitando o chart.js porque cada tipo de gráfico/elemento precisa ser
+// registrado
+
 ChartJS.register(
   CategoryScale,
   LinearScale,
