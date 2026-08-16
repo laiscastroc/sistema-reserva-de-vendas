@@ -76,7 +76,7 @@ async function submit(status: 'VENDA' | 'RESERVA') {
   }
 
   submitting.value = true
-  try{
+  try {
     await salesService.create({
       bird_id: props.bird.id,
       gender: form.gender,
@@ -93,13 +93,13 @@ async function submit(status: 'VENDA' | 'RESERVA') {
       status === 'VENDA' ? 'Venda registrada com sucesso!' : 'Reserva registrada com sucesso!'
     )
     router.push('/history')
-  }catch(error){
+  } catch (error) {
     if(error instanceof ApiRequestError){
       toast.error(error.message)
-    }else{
+    } else {
       toast.error('Não foi possível concluir o registro. Tente novamente.')
     }
-  }finally{
+  } finally {
     submitting.value = false
   }
 }
@@ -249,7 +249,7 @@ async function submit(status: 'VENDA' | 'RESERVA') {
 <style scoped>
 
 .field label {
-  color: #006400;
+  color: var(--color-primary);
 }
 
 .field input,
@@ -278,20 +278,20 @@ async function submit(status: 'VENDA' | 'RESERVA') {
 }
 
 .btn-primary {
-  background-color: #006400;
+  background-color: var(--color-primary);
 }
 
 .btn-primary:hover {
-  background-color:  #417619;
+  background-color: var(--color-primary-hover);
 }
 
 .actions .btn-outline {
-  color: #006400;
-  border-color: #006400;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
-.bird-info h3{
-  color: #006400;
+.bird-info h3 {
+  color: var(--color-primary);
 }
 
 .form-container {
@@ -301,8 +301,8 @@ async function submit(status: 'VENDA' | 'RESERVA') {
   box-shadow: var(--shadow-md);
 }
 
-.header h2{
-  color: #006400;
+.header h2 {
+  color: var(--color-primary);
 }
 
 .header {
@@ -339,7 +339,7 @@ async function submit(status: 'VENDA' | 'RESERVA') {
 }
 
 .bird-info span {
-  color: #006400;
+  color: var(--color-primary);
   font-size: 1.4rem;
   font-weight: 700;
 }
@@ -434,7 +434,7 @@ async function submit(status: 'VENDA' | 'RESERVA') {
 
 .total {
   font-size: 1.2rem;
-  color: #006400;
+  color: var(--color-primary);
   font-weight: 700;
 }
 

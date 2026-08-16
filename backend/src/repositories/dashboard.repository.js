@@ -1,9 +1,9 @@
 import { query } from "../config/database.js";
 
 export const dashboardRepository = {
-    async getSummary() {
-       const result = await query(
-        `SELECT
+  async getSummary() {
+    const result = await query(
+      `SELECT
         COUNT(*) FILTER (WHERE status = 'VENDA')::int AS total_sales,
         COUNT(*) FILTER (WHERE status = 'RESERVA')::int AS total_reservations,
         COUNT(*) FILTER (WHERE status = 'CANCELADA')::int AS total_cancelled,
@@ -12,14 +12,15 @@ export const dashboardRepository = {
         COALESCE(AVG(total_price) FILTER (WHERE status = 'VENDA'), 0) AS average_ticket,
         COALESCE(SUM(quantity) FILTER (WHERE status = 'VENDA'), 0)::int AS birds_sold
         FROM sales`
-       )
-       return result.rows[0]
-    },
-    //para quando tiver dias sem vendas o gráfico 
-    //não ficar "estranho"
-    async getRevenueByDay(days) {
-        const result = await query(
-            `SELECT
+    );
+    return result.rows[0];
+  },
+
+  //para quando tiver dias sem vendas o gráfico
+  //não ficar "estranho"
+  async getRevenueByDay(days) {
+    const result = await query(
+      `SELECT
          d::date AS day,
          COALESCE(SUM(s.total_price), 0) AS revenue,
          COUNT(s.id)::int AS sales_count
@@ -30,10 +31,10 @@ export const dashboardRepository = {
        ORDER BY d ASC`,
       [days]
     );
-        return result.rows;
-    },
+    return result.rows;
+  },
 
-    async getTopBirds(limit) {
+  async getTopBirds(limit) {
     const result = await query(
       `SELECT
          bird_name,
@@ -49,7 +50,7 @@ export const dashboardRepository = {
     return result.rows;
   },
 
-    async getRevenueByPaymentMethod() {
+  async getRevenueByPaymentMethod() {
     const result = await query(
       `SELECT
          payment_method,

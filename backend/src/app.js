@@ -12,8 +12,6 @@ import { ApiError } from "./utils/ApiError.js";
 
 export const app = express();
 
-// Trust Railway's reverse proxy so that X-Forwarded-For is respected
-// and express-rate-limit can correctly identify client IPs.
 app.set("trust proxy", 1);
 
 //cabeçalhos de segurança (proteger contra alguns 

@@ -57,7 +57,7 @@ const emit = defineEmits<{ confirm: []; cancel: [] }>()
 }
 
 .dialog-title {
-  color: #006400;
+  color: var(--color-primary);
   font-size: 1.2rem;
   margin: 0;
 }
@@ -69,12 +69,12 @@ const emit = defineEmits<{ confirm: []; cancel: [] }>()
 }
 
 .dialog-cancel {
-  color: #006400;
-  border-color: #006400;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 .dialog-confirm {
-  background: #006400;
+  background: var(--color-primary);
   color: #fff;
 }
 

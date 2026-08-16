@@ -75,8 +75,8 @@ onMounted(execute)
 
 <style scoped>
 
-.home-view h2{
-   color: #006400;
+.home-view h2 {
+   color: var(--color-primary);
 }
 .intro {
   margin-bottom: var(--space-6);
@@ -111,7 +111,7 @@ onMounted(execute)
 
 .filters input:focus,
 .filters select:focus {
-  border-color: #006400;
+  border-color: var(--color-primary);
   outline: none;
 }
 

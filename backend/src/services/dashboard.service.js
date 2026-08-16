@@ -1,35 +1,36 @@
-import { dashboardRepository } from '../repositories/dashboard.repository.js';
+import { dashboardRepository } from "../repositories/dashboard.repository.js";
 
 //conversão dos campos numeric pra number
 //valores de exibição, não retorna nenhuma query
 
 function toNumber(value) {
-    return Number(value ?? 0);
+  return Number(value ?? 0);
 }
 
 export const dashboardService = {
-    async getSummary({ days, lowStockThreshold }) {
-        const [summary, revenueByDay, topBirds, revenueByPaymentMethod, statusBreakdown, lowStockBirds] = 
-        await Promise.all([
-            dashboardRepository.getSummary(),
-            dashboardRepository.getRevenueByDay(days),
-            dashboardRepository.getTopBirds(5),
-            dashboardRepository.getRevenueByPaymentMethod(),
-            dashboardRepository.getStatusBreakdown(),
-            dashboardRepository.getLowStockBirds(lowStockThreshold)
-        ]);
-        return {
-            kpis: {
-                totalSales: summary.total_sales,
-                totalReservations: summary.total_reservations,
-                totalCancelled: summary.total_cancelled,
-                totalRevenue: toNumber(summary.total_revenue),
-                totalLegalizationRevenue: toNumber(summary.total_legalization_revenue),
-                averageTicket: toNumber(summary.average_ticket),
-                birdsSold: summary.birds_sold
-            },
-            revenueByDay: revenueByDay.map(row => ({
-                 day: row.day,
+  async getSummary({ days, lowStockThreshold }) {
+    const [summary, revenueByDay, topBirds, revenueByPaymentMethod, statusBreakdown, lowStockBirds] =
+      await Promise.all([
+        dashboardRepository.getSummary(),
+        dashboardRepository.getRevenueByDay(days),
+        dashboardRepository.getTopBirds(5),
+        dashboardRepository.getRevenueByPaymentMethod(),
+        dashboardRepository.getStatusBreakdown(),
+        dashboardRepository.getLowStockBirds(lowStockThreshold),
+      ]);
+
+    return {
+      kpis: {
+        totalSales: summary.total_sales,
+        totalReservations: summary.total_reservations,
+        totalCancelled: summary.total_cancelled,
+        totalRevenue: toNumber(summary.total_revenue),
+        totalLegalizationRevenue: toNumber(summary.total_legalization_revenue),
+        averageTicket: toNumber(summary.average_ticket),
+        birdsSold: summary.birds_sold,
+      },
+      revenueByDay: revenueByDay.map((row) => ({
+        day: row.day,
         revenue: toNumber(row.revenue),
         salesCount: row.sales_count,
       })),
@@ -50,5 +51,4 @@ export const dashboardService = {
       lowStockBirds,
     };
   },
-
-        }
+};

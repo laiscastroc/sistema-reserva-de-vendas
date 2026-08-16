@@ -1,5 +1,5 @@
 import { Pool } from "pg";
-import { env } from "./env.js";
+import { env, isProduction } from "./env.js";
 
 //usa-se um pool (várias conexões) para que possíveis
 //requisições simultâneas utilizem conexões já abertas
@@ -23,7 +23,7 @@ export async function query(text, params) {
   const start = Date.now();
   const result = await pool.query(text, params);
 
-  if (!env.isProduction) {
+  if (!isProduction) {
     console.log(`[db] ${text.replace(/\s+/g, " ").trim()} (${Date.now() - start}ms)`);
   }
   return result;

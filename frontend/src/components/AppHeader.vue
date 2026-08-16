@@ -35,7 +35,7 @@ import { faCartShopping, faChartLine, faClockRotateLeft } from '@fortawesome/fre
 
 <style scoped>
 .app-header {
-  background:#006400;
+  background: var(--color-primary);
   position: relative;
   padding-bottom: 22px;
 }
@@ -102,7 +102,7 @@ import { faCartShopping, faChartLine, faClockRotateLeft } from '@fortawesome/fre
 }
 
 .nav-link.router-link-exact-active {
-  background: #ff9717;
+  background: var(--color-accent-strong);
   color: var(--color-primary-dark);
 }
 

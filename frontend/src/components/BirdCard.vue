@@ -89,7 +89,7 @@ function handleRegister() {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: #006400;
+  background: var(--color-primary);
   color: #fff;
   font-size: 12px;
   padding: 5px 12px;
@@ -127,7 +127,7 @@ function handleRegister() {
 
 .name {
   font-size: 1.3rem;
-  color: #006400;
+  color: var(--color-primary);
 }
 
 .scientific {
@@ -140,7 +140,7 @@ function handleRegister() {
 .price {
   margin-top: var(--space-3);
   font-size: 1.4rem;
-  color:#006400;
+  color: var(--color-primary);
   font-weight: 700;
   font-family: var(--font-display);
 }
@@ -157,22 +157,22 @@ function handleRegister() {
   gap: 6px;
   margin-top: var(--space-3);
   font-size: 0.8rem;
-  color: #006400;
+  color: var(--color-primary);
   font-weight: 600;
 }
 
 .stock.low {
-  color: #ff8c00;
+  color: var(--color-warning);
 }
 
 .btn-register {
   margin-top: var(--space-4);
   width: 100%;
-  background-color: #006400;
+  background-color: var(--color-primary);
 }
 
-.btn-register:hover{
-  background-color: #417619;
+.btn-register:hover {
+  background-color: var(--color-primary-hover);
 }
 
 </style>

@@ -26,7 +26,7 @@ const cancelling = ref(false)
 async function loadSales() {
   loading.value = true
   error.value = null
-  try{
+  try {
     const response = await salesService.list({
       page: filters.page,
       limit: meta.value.limit,
@@ -34,9 +34,9 @@ async function loadSales() {
     })
     sales.value = response.data
     meta.value = response.meta
-  }catch(err){
+  } catch (err) {
     error.value = err instanceof ApiRequestError ? err.message : 'Erro ao carregar o histórico.'
-  }finally{
+  } finally {
     loading.value = false
   }
 }
@@ -54,14 +54,14 @@ function openCancelDialog(saleId: number) {
 async function confirmCancel() {
   if(!cancelDialog.saleId) return
   cancelling.value = true
-  try{
+  try {
     await salesService.cancelReservation(cancelDialog.saleId)
     toast.success('Reserva cancelada e estoque devolvido ao catálogo.')
     cancelDialog.open = false
     await loadSales()
-  }catch (err){
+  } catch (err) {
     toast.error(err instanceof ApiRequestError ? err.message : 'Não foi possível cancelar a reserva.')
-  }finally{
+  } finally {
     cancelling.value = false
   }
 }
@@ -164,27 +164,22 @@ onMounted(loadSales)
       </div>
     </template>
 
-<ConfirmDialog
-:open="cancelDialog.open"
-title="Cancelar reserva?"
-description="O estoque da ave será devolvido ao catálogo. Essa ação não pode ser desfeita."
-confirm-label="Sim, cancelar"
-cancel-label="Voltar"
-danger
-@confirm="confirmCancel"
-@cancel="cancelDialog.open = false"
-/>
-</div>
+    <ConfirmDialog
+      :open="cancelDialog.open"
+      title="Cancelar reserva?"
+      description="O estoque da ave será devolvido ao catálogo. Essa ação não pode ser desfeita."
+      confirm-label="Sim, cancelar"
+      cancel-label="Voltar"
+      danger
+      @confirm="confirmCancel"
+      @cancel="cancelDialog.open = false"
+    />
+  </div>
 </template>
 
 <style scoped>
-
-.confirmCancel {
-  background-color: red;
-}
-
-.header h2{
-  color:  #006400;
+.header h2 {
+  color: var(--color-primary);
 }
 .header {
   display: flex;
@@ -259,22 +254,22 @@ tbody tr {
 }
 
 .total {
-  color: #006400;
+  color: var(--color-primary);
   font-weight: 700;
 }
 
-.actions-col button{
-  color:#006400
+.actions-col button {
+  color: var(--color-primary)
 }
 
 button.btn-outline {
-  border-color: #006400;
-  color: #006400;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
 }
 
-button.btn-outline:hover{
-  border-color: #417619;
-  color: #006400;
+button.btn-outline:hover {
+  border-color: var(--color-primary-hover);
+  color: var(--color-primary);
 }
 
 .actions-col {

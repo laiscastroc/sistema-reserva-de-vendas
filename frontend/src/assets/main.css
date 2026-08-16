@@ -4,8 +4,11 @@
   --color-primary: #006400;
   --color-primary-dark: #006400;
   --color-primary-light: #16717a;
+  --color-primary-hover: #417619;
   --color-accent: #f2a65a;
   --color-accent-dark: #d98a3d;
+  --color-accent-strong: #ff9717;
+  --color-warning: #ff8c00;
   --color-sage: #7fb685;
   --color-sage-dark: #4f8a58;
   --color-danger: #d65a5a;
