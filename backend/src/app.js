@@ -10,8 +10,7 @@ import { errorHandler, notFoundHandler } from "./middlewares/errorHandler.js";
 import { generalLimiter } from "./middlewares/rateLimiter.js";
 import { ApiError } from "./utils/ApiError.js";
 
-export const app = express();
-export { app };
+const app = express();
 
 app.set("trust proxy", 1);
 
