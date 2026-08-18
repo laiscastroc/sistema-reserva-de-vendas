@@ -11,6 +11,8 @@ import { generalLimiter } from "./middlewares/rateLimiter.js";
 import { ApiError } from "./utils/ApiError.js";
 
 export const app = express();
+export { app };
+export default app;
 
 app.set("trust proxy", 1);
 
@@ -54,3 +56,5 @@ app.use("/api", routes);
 
 app.use(notFoundHandler);
 app.use(errorHandler);
+
+export default app;
