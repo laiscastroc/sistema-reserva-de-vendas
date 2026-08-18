@@ -12,7 +12,6 @@ import { ApiError } from "./utils/ApiError.js";
 
 export const app = express();
 export { app };
-export default app;
 
 app.set("trust proxy", 1);
 
